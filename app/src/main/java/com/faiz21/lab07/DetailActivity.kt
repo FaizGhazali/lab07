@@ -1,5 +1,6 @@
 package com.faiz21.lab07
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,8 +31,17 @@ class DetailActivity : AppCompatActivity() {
         val country = intent.getStringExtra("country")
         binding.countryTextView.text= country;
 
-
-
+        binding.cancelBtn.setOnClickListener{
+            finish()
+            //close activity
+        }
+        binding.confirmBtn.setOnClickListener{
+            //go to ConfirmActivity
+            val intent = Intent(this, ConfirmActivity::class.java)
+            startActivity(intent)
+        }
+//        val intent = Intent(this, DetailActivity::class.java)
+//        startActivity(intent)
 
     }
 }
